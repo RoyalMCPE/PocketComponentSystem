@@ -12,6 +12,6 @@ ECS allows for your plugin to be scalable for either end users or developers wit
 
 ## What is left to implement?
 
-- [ ] Entities and Components
+- [X] Entities and Components
 - [ ] Filters
 - [ ] Systems
