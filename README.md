@@ -8,6 +8,8 @@ ECS (or EntityComponentSystem) allows for developers to build component based pl
 
 ## Why should I use ECS?
 
+ECS allows for your plugin to be scalable for either end users or developers without the hassle of designing entire APIs that may not achieve what end users need.
+
 ## What is left to implement?
 
 - [ ] Entities and Components
