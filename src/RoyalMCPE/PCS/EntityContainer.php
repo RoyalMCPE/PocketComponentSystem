@@ -26,4 +26,8 @@ final class EntityContainer {
         }
         unset($this->entities[$uuid]);
     }
+
+    public function filter(IFilter $filter): IFilterResult {
+        return $filter->search($this->entities);
+    }
 }
