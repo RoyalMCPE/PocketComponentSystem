@@ -42,11 +42,19 @@ final class EntityContainer {
         if(!$this->isValid($uuid)) {
             throw new InvalidArgumentException("Cannnot add a component for an entity that has been destroyed");
         }
+        // TODO: Add the component instance the system that corrilates with it.
         $this->entities[$uuid][$component::class] = $component;
     }
 
     public function hasComponent(string $uuid, string $componentType): bool {
         return array_key_exists($componentType, $this->entities[$uuid]);
+    }
+
+    public function getComponent(string $uuid, string $componentType): IComponent {
+        if(!$this->isValid($uuid)) {
+            throw new InvalidArgumentException("Cannot retrieve component for an entity that has been destroyed");
+        }
+        return $this->entities[$uuid][$componentType];
     }
 
     public function removeComponent(string $uuid, string $componentType): void {
