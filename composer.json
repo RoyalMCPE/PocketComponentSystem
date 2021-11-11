@@ -1,0 +1,23 @@
+{
+    "name": "royalmcpe/pocket-component-system",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Royalmcpe\\PocketComponentSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RoyalMCPE",
+            "email": "coolestgamer117@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^1.1.1",
+        "pocketmine/pocketmine-mp": "4.0.0-BETA12",
+        "pocketmine/classloader": "@dev",
+        "pocketmine/spl": "@dev",
+        "phpstan/phpstan-strict-rules": "^1.0.0",
+        "phpstan/extension-installer": "^1.0"
+    }
+}
