@@ -14,16 +14,14 @@ $runtime = new Runtime();
 ```
 
 ## Creating a component
-Components are ment to store data only. If your component has any functions a `RuntimeException` will be thrown. It is expected that you seperate data from logic to keep the data orientated specification in tact. 
+Components are ment to store data only. If your component has any functions except for a constructor a `RuntimeException` will be thrown. It is expected that you seperate data from logic to keep the data orientated specification in tact. 
 
 ```php
 use RoyalMCPE\PCS\attributes;
 
 #[Component]
 class Position {
-    public int $x;
-    public int $y;
-    public int $z;
+    public function __construct(public int $x, public int $y, public int $z) {}
 }
 ```
 
@@ -32,7 +30,7 @@ Now that we have both a component and a runtime, we can now go ahead and create 
 
 ```php
 /** @var Runtime $runtime */
-$runtime->spawn()->insert(Position::create(mt_rand(0, 100), 0, 0));
+$runtime->spawn()->insert(new Position(mt_rand(0, 100), 0, 0));
 ```
 
 ## Create a system
